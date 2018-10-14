@@ -31,7 +31,7 @@ client.on('ready', () => {
 });
 
 
-
+client.login(process.env.BOT_TOKEN2);
 client.login(process.env.SPAM);
 heros.login(process.env.HER);
 other.login(process.env.OTH);
