@@ -3,21 +3,6 @@ const client = new Discord.Client();
 const heros = new Discord.Client();
 const other = new Discord.Client();
 
-client.on('message', msg => {
-
-    if (msg.content == '$join') {
-        if (msg.member.voiceChannel) {
-
-     if (msg.member.voiceChannel.joinable) {
-         msg.member.voiceChannel.join().then(msg.react('✅'));
-     }
-    }
-}
-})
-client.on('ready', () => { //code bot not leave room voice //Bot Is Online
-    client.channels.get("510204462527152129").join(); //by : iBeAnthonyD
-    });
-
 client.on('ready', async () => {
       let ReBeL = ["هلا بلزين تراني بوت تبند اشيلك","هي انا بولعها كريديتس لوووووول","Hi Im Credits Agaaaaaaaaain"]
   setInterval(() => {
