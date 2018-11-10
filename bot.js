@@ -3,19 +3,20 @@ const client = new Discord.Client();
 const heros = new Discord.Client();
 const other = new Discord.Client();
 
-client.on('ready',async () => {
-console.log("Starting..");
-let g = client.guilds.get("502796534522445824");
-let c = g.channels.get("510204462527152129");
-if(c.type === 'voice') {
-c.join();
-setInterval(() => {
-if(!g.me.voiceChannel) c.join();
-}, 1);
-} else {
-console.log("Failed To Join:\n The Channel Type isn't \"text\"");
+client.on('message', msg => {
+
+    if (msg.content == '$join') {
+        if (msg.member.voiceChannel) {
+
+     if (msg.member.voiceChannel.joinable) {
+         msg.member.voiceChannel.join().then(msg.react('✅'));
+     }
+    }
 }
-});
+})
+client.on('ready', () => { //code bot not leave room voice //Bot Is Online
+    client.channels.get("510204462527152129").join(); //by : iBeAnthonyD
+    });
 
 client.on('ready', async () => {
       let ReBeL = ["هلا بلزين تراني بوت تبند اشيلك","هي انا بولعها كريديتس لوووووول","Hi Im Credits Agaaaaaaaaain"]
