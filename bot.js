@@ -60,4 +60,12 @@ channel.send(` 0823t7gawgaww 50`);
 }, 1500)
 })
 
+client.on('guildMemberAdd' ,member => {
+  if(member.guild.id !== '515471999317835780') return;
+  setTimeout(function(){
+  member.guild.channels.find(r => r.id === '515587053656735751').send('**Welcome to __Ever Server ,1k__ :rabbit2: 
+**');
+},8000);
+});
+ 
  client.login(process.env.BOT_TOKEN2); 
